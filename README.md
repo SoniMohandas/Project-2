@@ -4,8 +4,8 @@
 
 * Instructions:
 
-1. I need to be able to separate out patients based on the mean of tumor radius 
-for a research project.
+1. To separate out patients based on the mean of tumor radius for a research project.
 
-2. I’d like the final datasets to be in csvs, and I’d like 5 different csvs.
-Steps and Time Resources:
+2. Final datasets to be in csvs, and I’d like 5 different csvs.
+
+3. Steps and Time Resources:
