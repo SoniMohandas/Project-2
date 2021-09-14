@@ -1,6 +1,6 @@
 # Project-2 Breast cancer prediction
 
-* Dataset: https://www.kaggle.com/iabhishekbhardwaj/breast-cancer-prediction
+* Dataset link: https://www.kaggle.com/iabhishekbhardwaj/breast-cancer-prediction
 * Instructions:
 
 1. To separate out patients based on the mean of tumor radius for a research project.
@@ -9,7 +9,7 @@
 
 # Singapore school distinctive programme
 
-* Schools - kaggle.com/subhamjain/schools-information-directory-singapore?select=school-distinctive-programmes.csv
+* Dataset link: https://www.kaggle.com/subhamjain/schools-information-directory-singapore?select=school-distinctive-programmes.csv
 * Instructions:
  
 1. Create a PostgreSQL DB.
