@@ -9,6 +9,8 @@
 3. Create five json files from the created CSV files
 4. Load json files into MongoDB
 5. Steps and Time Resources:
+![Tumor](https://user-images.githubusercontent.com/83611005/134525210-daa58181-adef-4153-bae3-3ad589dba3fe.png)
+
 
 # Singapore school distinctive programme
 
@@ -19,3 +21,4 @@
 2. Clean up the data
 3. Follow 3rd normal form to create the schema.
 4. The final db should only include schools with a focus in STEM
+5. 
