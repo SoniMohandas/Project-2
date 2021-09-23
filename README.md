@@ -7,7 +7,7 @@
 1. To separate out patients based on the mean of tumor radius for a research project.
 2. Final datasets to be in csvs, and I’d like 5 different CSVs.
 3. Create five json files from the created CSV files
-4. Load those files into MongoDB
+4. Load json files into MongoDB
 5. Steps and Time Resources:
 
 # Singapore school distinctive programme
