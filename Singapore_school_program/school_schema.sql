@@ -8,7 +8,7 @@
 
 CREATE TABLE "stem_school" (
     "id" SERIAL   NOT NULL,
-    "school_name" VARCHAR(40)   NOT NULL,
+    "school_name" VARCHAR(60)   NOT NULL,
     "program_title_id" INT   NOT NULL,
     "life_program_id" INT   NOT NULL,
     CONSTRAINT "pk_stem_school" PRIMARY KEY (
@@ -18,7 +18,7 @@ CREATE TABLE "stem_school" (
 
 CREATE TABLE "program_title" (
     "id" SERIAL   NOT NULL,
-    "alp_title" VARCHAR(100)   NOT NULL,
+    "alp_title" VARCHAR(200)   NOT NULL,
     CONSTRAINT "pk_program_title" PRIMARY KEY (
         "id"
      )
@@ -26,8 +26,8 @@ CREATE TABLE "program_title" (
 
 CREATE TABLE "life_program" (
     "id" SERIAL   NOT NULL,
-    "llp_domain1" VARCHAR(40)   NOT NULL,
-    "llp_title1" VARCHAR(100)   NOT NULL,
+    "llp_domain1" VARCHAR(200)   NOT NULL,
+    "llp_title1" VARCHAR(200)   NOT NULL,
     CONSTRAINT "pk_life_program" PRIMARY KEY (
         "id"
      )
