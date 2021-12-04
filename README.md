@@ -21,5 +21,6 @@
 2. Clean up the data
 3. Follow 3rd normal form to create the schema.
 4. The final db should only include schools with a focus in STEM
-5. ![dbQuery](https://user-images.githubusercontent.com/83611005/134528347-14d4bd63-232f-4830-8d4f-151a3102615d.jpg)
+
+![school_schema_diagram](https://user-images.githubusercontent.com/83611005/144691468-c2713e54-a58f-4299-96cc-f0aa374a644b.png)
 
