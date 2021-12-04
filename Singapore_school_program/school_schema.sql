@@ -1,15 +1,16 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/RxVg6p
+-- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
--- Schools - kaggle.com/subhamjain/schools-information-directory-singapore?select=school-distinctive-programmes.csv
--- Create a PostgreSQL DB.
--- Clean up the data
--- Follow 3rd normal form to create the schema.
--- The final db should only include schools with a focus in STEM
+-- Modify this code to update the DB schema diagram.
+-- To reset the sample schema, replace everything with
+-- two dots ('..' - without quotes).
 
 CREATE TABLE "stem_school" (
     "id" SERIAL   NOT NULL,
     "school_name" VARCHAR(40)   NOT NULL,
+    "program_title_id" INT   NOT NULL,
+    "life_program_id" INT   NOT NULL,
     CONSTRAINT "pk_stem_school" PRIMARY KEY (
         "id"
      )
@@ -17,7 +18,7 @@ CREATE TABLE "stem_school" (
 
 CREATE TABLE "program_title" (
     "id" SERIAL   NOT NULL,
-    "alp_title" VARCHAR(100),
+    "alp_title" VARCHAR(100)   NOT NULL,
     CONSTRAINT "pk_program_title" PRIMARY KEY (
         "id"
      )
@@ -25,16 +26,16 @@ CREATE TABLE "program_title" (
 
 CREATE TABLE "life_program" (
     "id" SERIAL   NOT NULL,
-    "lip_domain1" VARCHAR(40),
-    "lip_title1" VARCHAR(100),
+    "llp_domain1" VARCHAR(40)   NOT NULL,
+    "llp_title1" VARCHAR(100)   NOT NULL,
     CONSTRAINT "pk_life_program" PRIMARY KEY (
         "id"
      )
 );
 
-ALTER TABLE "stem_school" ADD CONSTRAINT "fk_stem_school_id" FOREIGN KEY("id")
-REFERENCES "life_program" ("id");
+ALTER TABLE "stem_school" ADD CONSTRAINT "fk_stem_school_program_title_id" FOREIGN KEY("program_title_id")
+REFERENCES "program_title" ("id");
 
-ALTER TABLE "program_title" ADD CONSTRAINT "fk_program_title_id" FOREIGN KEY("id")
-REFERENCES "stem_school" ("id");
+ALTER TABLE "stem_school" ADD CONSTRAINT "fk_stem_school_life_program_id" FOREIGN KEY("life_program_id")
+REFERENCES "life_program" ("id");
 
