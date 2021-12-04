@@ -1,56 +1,30 @@
--- Select all data from school_admin
- SELECT * FROM school_admin;
+-- Insert school_name data from school_admin table
+INSERT INTO stem_school(school_name)
+SELECT school_name
+FROM school_admin;
 
- --Filter out stem schools from the table school_admin
- SELECT * FROM school_admin WHERE alp_domain LIKE 'STEM';
+-- Add columns program_title_id and life_program_id
+ALTER TABLE stem_school
+ADD COLUMN program_title_id SERIAL,
+ADD COLUMN life_program_id SERIAL;
 
- -- Creating another table named school from the original table school_admin that it needs to keep unaltered
- CREATE TABLE stem_school AS SELECT * FROM school_admin 
- WHERE alp_domain LIKE 'STEM';
+-- Query 10 records from stem_school
+SELECT * FROM stem_school WHERE id<=10;
 
- --View newly created table
- SELECT * FROM stem_school;
+-- Insert alp_title data school_admin table into column alp_title of table program_title
+INSERT INTO program_title(alp_title)
+SELECT alp_title
+FROM school_admin;
 
- --Clean table by droping null columns lip_domain2, lip_title2 and index column which isn't sequential.
- ALTER TABLE stem_school 
- DROP COLUMN IF EXISTS llp_domain2, 
- DROP COLUMN IF EXISTS llp_title2,
- DROP COLUMN IF EXISTS alp_domain,
- DROP COLUMN IF EXISTS index;
+-- Query 10 records from program_title
+SELECT * FROM program_title WHERE id<=10;
 
- --View table
- SELECT * FROM stem_school;
+-- Insert llp_domain1, llp_title1 from table school_admin into table life_program
+INSERT INTO life_program(llp_domain1, llp_title1)
+SELECT llp_domain1, llp_title1
+FROM school_admin;
 
- --Add a primary key column to the table
- ALTER TABLE stem_school ADD COLUMN IF NOT EXISTS id serial primary key; 
- -- View table again 
- SELECT * FROM stem_school;
+-- Query 10 records from table life_program
+SELECT * FROM life_program;
 
- --Create table program_title from table stem_school and add primary key
- CREATE TABLE program_title 
- AS SELECT alp_title FROM stem_school;
- ALTER TABLE program_title ADD COLUMN IF NOT EXISTS id serial primary key;
- SELECT * FROM program_title;
- 
- --Create table life_program from table stem_school and add primary key
- CREATE TABLE life_program
- AS SELECT llp_domain1, llp_title1 FROM stem_school;
- ALTER TABLE life_program ADD COLUMN IF NOT EXISTS id serial primary key;
- SELECT * FROM life_program;
 
---Drop columns alp_title, llp_domain1, llp_title1 from table stem_school
- ALTER TABLE stem_school 
- DROP COLUMN IF EXISTS alp_title,
- DROP COLUMN IF EXISTS llp_domain1,
- DROP COLUMN IF EXISTS llp_title1;
- SELECT * FROM stem_school;
- 
- -- Query 
- SELECT s.id, s.school_name, pt.alp_title, lp.llp_title1
- FROM program_title AS pt
- JOIN stem_school AS s
- ON pt.id=s.id
- JOIN life_program AS lp
- ON s.id=lp.id
- WHERE pt.id = 4;
- 
